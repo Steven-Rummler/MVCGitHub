@@ -1,0 +1,23 @@
+﻿body {
+}
+
+caption {
+    font-weight: 600;
+    font-size: larger;
+    padding-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}

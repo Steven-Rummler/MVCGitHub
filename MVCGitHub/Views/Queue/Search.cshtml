@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Queue";
+    ViewBag.Title = "Search";
 }
 
 <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
@@ -16,11 +16,10 @@
 
 <div style="margin-left:25%">
 
-        <h2>Queue Display</h2>
+    <h2>Queue Display</h2>
 
-        @foreach (var sData in ViewBag.MyQueue)
-        {
-            <p>@sData</p>
-        }
+    <p>@ViewBag.FoundResponse</p>
 
 </div>
+
+

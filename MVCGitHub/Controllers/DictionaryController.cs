@@ -11,6 +11,8 @@ namespace DataStructuresAssignment.Controllers
     {
         static Dictionary<string, int> myDictionary = new Dictionary<string, int>();
 
+        static int counter = 1;
+
         // GET: Dictionary
         public ActionResult Index()
         {
@@ -19,7 +21,9 @@ namespace DataStructuresAssignment.Controllers
 
         public ActionResult AddOne()
         {
-            myDictionary.Add("New Entry 1", 1);
+            myDictionary.Add("New Entry " + counter, counter);
+
+            counter++;
 
             ViewBag.message = "One item was added to the dictionary";
 
@@ -30,12 +34,15 @@ namespace DataStructuresAssignment.Controllers
         {
             for (int i = 2; i < 2002; i++)
             {
-                myDictionary.Add(("New Entry" + i), i);
+                myDictionary.Add("New Entry " + counter, counter);
+                counter++;
             }
 
-            ViewBag.display = myDictionary;
+            //ViewBag.display = myDictionary;
 
-            return View("Display");
+            ViewBag.message = "HUGE LIST ADDED";
+
+            return View("Index");
         }
 
         public ActionResult Display()
@@ -60,6 +67,8 @@ namespace DataStructuresAssignment.Controllers
 
             ViewBag.message = "All items were cleared from the dictionary";
 
+            counter = 0;
+
             return View("Index");
         }
 
@@ -68,12 +77,12 @@ namespace DataStructuresAssignment.Controllers
 
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
 
-            sw.Start();
+            //sw.Start();
 
             //loop to do all the work
             if (myDictionary.ContainsValue(5))
             {
-                ViewBag.search = "The value was found in ";
+                ViewBag.message = "The value was found in ";
             }
 
             else
@@ -81,13 +90,13 @@ namespace DataStructuresAssignment.Controllers
                 ViewBag.message = "The value was not found in ";
             }
             
-            sw.Stop();
+            //sw.Stop();
 
-            TimeSpan ts = sw.Elapsed;
+            //TimeSpan ts = sw.Elapsed;
 
-            ViewBag.StopWatch = ts;
+            //ViewBag.StopWatch = ts;
 
-            ViewBag.message = ViewBag.message + ViewBag.stopwatch + " seconds";
+            //ViewBag.message += ViewBag.stopwatch + " seconds";
 
             return View("Index");
         }

@@ -1,0 +1,21 @@
+﻿<!--Tanner Garrett - Display page to be displayed on search of stack-->
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Stack Display</h2>
+
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+    <h3 class="w3-bar-item">Menu</h3>
+    <a href="@Url.Action("Index","Stack")" class="w3-bar-item w3-button">Return to Stack Index</a>
+    <a href="@Url.Action("Index", "Home")" class="w3-bar-item w3-button">Return to Main Menu</a>
+</div>
+<div style="margin-left:45%">
+    @ViewBag.Display
+
+    @foreach (var sData in ViewBag.TheStack)
+    {
+        <p>@sData</p>
+    }
+</div>
+

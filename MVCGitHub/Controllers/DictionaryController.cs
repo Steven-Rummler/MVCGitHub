@@ -77,7 +77,7 @@ namespace DataStructuresAssignment.Controllers
 
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
 
-            //sw.Start();
+            sw.Start();
 
             //loop to do all the work
             if (myDictionary.ContainsValue(5))
@@ -90,13 +90,11 @@ namespace DataStructuresAssignment.Controllers
                 ViewBag.message = "The value was not found in ";
             }
             
-            //sw.Stop();
+            sw.Stop();
 
-            //TimeSpan ts = sw.Elapsed;
+            TimeSpan ts = sw.Elapsed;
 
-            //ViewBag.StopWatch = ts;
-
-            //ViewBag.message += ViewBag.stopwatch + " seconds";
+            ViewBag.message += ts + " seconds";
 
             return View("Index");
         }
